@@ -1,0 +1,8 @@
+"""Note, all input from the user must be lowercase"""
+
+def rps_winner():
+    p_o = str(input("Type rock , paper , or scissors "))
+    p_t = str(input("Type rock , paper , or scissors "))
+#If any of the following winning cases occur, then the tie is false, and player 1 wins, other wise, the tie statement , and victory statement are false, thus it is a loss for player 1
+    print("player 1 wins. That is " + (str((p_o == 'rock' and p_t == 'scissors') or (p_o == 'scissors' and p_t == 'paper') or (p_o == 'paper' and p_t == 'rock'))).lower())
+    print("It is a tie. That is " + (str(p_o == p_t)).lower())
