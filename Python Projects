@@ -1,0 +1,33 @@
+def cad_cashier(price,payment):
+#Rounds decimal part of change to nearest 5 cents
+    change = payment - price
+    return round(float(0.05*round(change/0.05)),2)
+    
+##################################################################################################################################
+
+def min_CAD_coins(price,payment):
+
+#Takes the value of the change, and multiplies by 100 to get cent value
+    
+    total_value = int(math.ceil((cad_cashier(price,payment))*100))
+
+#Number of times toonies go into the whole amount    
+    t=total_value//200 
+    x=total_value%200
+
+#Number of times loonies go into the remainder of the whole amount after toonies are taken out    
+    l=(x//100)
+    y=(total_value%200)%100
+
+#Number of times quarters go in after loonies and toonies are taken out from the whole amount    
+    q=(y)//25
+    z=((total_value%200)%100)%25
+
+#Number of times dimes go into whole amount after loonies, toonies and quarters are taken out    
+    d=(z)//10
+    j=(((total_value%200)%100)%25)%10
+
+#Number of times nickels go into the final remaining amount after all other currencies are taken from the initial whole    
+    n=(j)//5
+    
+    return (t,l,q,d,n)
