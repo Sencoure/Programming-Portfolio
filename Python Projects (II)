@@ -1,0 +1,11 @@
+def ascii_name_plaque(name):
+#Takes length of the name and stores it in the variable j
+    j = len(name)
+#Border (*) is equal to the length of the name + 8
+    border = '*' * (j+8)
+    print(border)
+    print("*" + " " *(j+6) + "*")
+    print("*" + "___" +name + "___" +"*")
+    print("*" + " " * (j+6) + "*")
+#Prints closing border on the name the same way the top border was printed
+    print(border)
